@@ -1,0 +1,28 @@
+<!-- The chat view -->
+<section class="container">
+  <div class="page-header">
+    <h3>
+      Complaint
+    </h3>
+  </div>
+  <div class="list-group">
+    <div data-ng-repeat="complaint in vm.complaints" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="complaint.createdDate | date:'mediumDate'"></span>
+        by
+        <span ng-if="complaint.createdBy" ng-bind="complaint.createdBy.displayName"></span>
+        <span ng-if="!complaint.createdBy">Deleted User</span>
+      </small>
+      <a class="btn btn-danger btn-sm pull-right" ng-click="vm.remove(this.complaint)"  >
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+      <h4 class="list-group-item-heading" data-ng-bind="complaint.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="complaint.content"></p>
+    </div>
+
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="complaints.$resolved && !complaints.length">
+    No Complaint yet, why don't you <a data-ui-sref="admin.articles.create">create one</a>?
+  </div>
+</section>

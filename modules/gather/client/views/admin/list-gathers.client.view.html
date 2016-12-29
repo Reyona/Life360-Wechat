@@ -1,0 +1,39 @@
+﻿<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Gather</h3>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="vm.search" placeholder="Search"
+               ng-change="vm.figureOutItemsToDisplay()"/>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.gathers.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </div>
+  </div>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="gather in vm.pagedItems track by $index"
+       data-ui-sref="admin.gathers.edit({gatherId: gather._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="gather.createdDate | date:'mediumDate'"></span>
+        by
+        <span ng-if="gather.createdBy" ng-bind="gather.createdBy"></span>
+        <span ng-if="!gather.createdBy">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading">
+        {{gather.gatherLocation}} -> {{gather.targetLocation}}
+      </h4>
+      <!--<p class="list-group-item-text" data-ng-bind="gather.content"></p>-->
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="gathers.$resolved && !gathers.length">
+    No Notice yet, why don't you <a data-ui-sref="admin.gathers.create">create one</a>?
+  </div>
+  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength"
+                  ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
+</section>

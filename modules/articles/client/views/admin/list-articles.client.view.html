@@ -1,0 +1,37 @@
+﻿<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Notice</h3>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="vm.search" placeholder="Search"
+               ng-change="vm.figureOutItemsToDisplay()"/>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.articles.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </div>
+  </div>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="article in vm.pagedItems track by $index"
+       data-ui-sref="admin.articles.edit({articleId: article._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="article.createdDate | date:'mediumDate'"></span>
+        by
+        <span ng-if="article.createdBy" ng-bind="article.createdBy.displayName"></span>
+        <span ng-if="!article.createdBy">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="article.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
+    No Notice yet, why don't you <a data-ui-sref="admin.articles.create">create one</a>?
+  </div>
+  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength"
+                  ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
+</section>
