@@ -1,0 +1,21 @@
+<view bindtouchstart="touchStart" bindtouchend="touchEnd" wx:for="{{complainDatas}}" data-index="{{item.rowId}}" bindtap="tapEvent">
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp"> 
+	<view class="box-note-body-comp" style="transition-delay:{{100*index}}ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-40}}px;width : {{divCompSize.width-20}}px; background-color:{{item.bgcolor}}">
+            <!-- body -->
+            <view class="box-main-content" style="opacity:{{loading?0:1}};transition:{{loading?'none':'all .5s ease-in-out'}}">
+                    <view class="box-home-nickName" style="height : {{divCompSize.height*0.1-4}}px"><text>{{item.displayName}}：</text></view>
+                    <view class="box-home-content" style="height : {{divCompSize.height*0.65-26}}px"><text class="box-content-text">{{item.title}}</text></view>
+                    <view class="box-emotiction-comp">
+                        <image src="{{item.emoticion}}" mode="aspectFit" style="height:{{divCompSize.height*0.1-2}}px;width:{{divCompSize.height*0.1-2}}px"></image>
+                    </view>
+                    <view class="box-home-date"><text>{{item.updateTime}}</text></view>
+                </view>
+             <!-- -->
+            
+            </view>
+        </view>
+    </view>
+    
+     <image class="addComplaint-img" src="/resources/add.png" catchtap="addNewComplaint"></image>
+</view>

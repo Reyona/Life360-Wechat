@@ -1,0 +1,240 @@
+.box-radius-border{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 10px;
+}
+
+/*.title{
+    padding: 5px;
+    width: 90%;
+}*/
+
+.description{
+    padding: 20px 5px 5px 0px;
+    height: 200px;
+    width: 100%;
+    font-size : 28rpx;
+    font-family:  Microsoft YaHei;
+    color: #101010;
+}
+
+.publish_btn{
+    height: 40px;
+    text-align: center;
+    padding: 0px auto;
+    width: 50%;
+}
+
+.box-pic{
+    width: 65rpx;
+    height: 65rpx;
+    margin: 0px 5px 10px 5px;
+    padding: 10rpx;
+    border: 1px solid #ffffff;
+    border-radius: 14px;
+}
+
+.box-emoticion-section{
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    padding-bottom: 10px;
+    padding-left:10px;
+}
+
+.emoticion-comp{
+    float:left;
+    width: 15%;
+    height: 10%;
+}
+
+.emoticion-label{
+    float:left;
+}
+
+.publish-anonymity-comp{
+    margin-left:15px;
+    margin-bottom: 10px;
+    height:30px;
+    line-height:30px;
+}
+
+.publish-annoymity-label{
+    height: 100%;
+    padding:4rpx 0;
+}
+
+.publish-anonymity-switch{
+    float:left;
+    height: 100%;
+    margin: auto;  
+}
+
+.box-publish-description{
+   clear:both; 
+}
+
+.pic-comp{
+  width:  20%;  
+}
+
+.publish-btn{
+    height: 82rpx;
+    border: 1px solid #ebebeb;
+    line-height: 82rpx;
+    background-color: #50c5b7;
+    color:#ffffff;
+    flex:1;
+    margin:0 10px;
+}
+
+.publish-btn-section{
+    display:flex;
+    clear:both; 
+    margin-top:65rpx;
+    z-index: 999;
+}
+
+.add-pic-section{
+    clear:both;
+    height: 90rpx;
+    margin-top: 10px;
+    padding: 0px 0px 15px 5px;
+}
+
+.weui-uploader__file {
+  float: left;
+  margin-left: 5px;
+  margin-bottom: 9px;
+}
+
+.weui-uploader__img {
+  float: left;
+  display: block;
+  width:85rpx;
+  height: 85rpx;
+}
+
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  width: 85rpx;
+  height: 85rpx;
+  border: 1px solid #ffffff;
+}
+
+.weui-uploader__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.weui-uploader__input-box:before,
+.weui-uploader__input-box:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ffffff;
+}
+.weui-uploader__input-box:before {
+  width: 2px;
+  height: 39.5rpx;
+}
+.weui-uploader__input-box:after {
+  width: 39.5rpx;
+  height: 2px;
+}
+.weui-uploader__input-box:active {
+  border-color: #999999;
+}
+.weui-uploader__input-box:active:before,
+.weui-uploader__input-box:active:after {
+  background-color: #999999;
+}
+
+.delete-pic-comp{
+    position:relative;
+    height: 25rpx;
+    width : 25rpx;
+    left:-20rpx;
+    top :-15rpx;
+}
+
+.preImage-comp{
+    position: absolute;
+    left:19%;
+    top:2%;
+    
+}
+
+.preImagemask{
+    position : relative;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    z-index: 98;
+    left: 0rpx;
+    top: 0rpx;
+    width: 475rpx;
+    height:475rpx;
+    border-radius: 15px;
+}
+
+.preImage{
+    position : relative;
+    z-index: 99;
+    left: 50rpx;
+    top : -435rpx;
+    width: 380rpx;
+    height:380rpx;
+}
+
+
+.box-note-body-comp{
+    white-space:normal;
+    word-break:break-all;
+    word-wrap:break-word;
+    background: #F7E999;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(-1deg);
+}
+
+.box-note-body-comp:before  {
+    display: block;
+    content: "";
+    background: rgba(227, 200, 114, 0.40);
+    width: 174rpx;
+    height: 56rpx;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 6px/18px 0;
+    position: absolute;
+    top: -26rpx;
+    left: 35%;
+    transform: rotate(-1deg);
+}
+
+.box-note-comp{
+    margin-top: 50rpx;
+    margin-left : 10rpx;
+}
+
+.label-pic-tip{
+    font-size:24rpx;
+    margin:0 auto auto 20rpx; 
+    color:#666;
+    font-family:  Microsoft YaHei;
+}
+
+page{
+    background : #FFFFF3;
+}

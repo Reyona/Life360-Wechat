@@ -1,0 +1,109 @@
+<view>
+  <view class="ticket" style="background-color:{{backgroundColor}}">
+    <view>
+      <image class="thumbtack" src="../icon/thumbtack.png"></image>
+    </view>
+    <view class="people">
+      <view class="people-left">
+        <image class="people-icon" src="../icon/people.png"></image>
+      </view>
+      <view class="people-right">
+        <text class="people-text msg-title">{{userList.length}}</text>
+      </view>
+    </view>
+    <view class="position">
+      <view class="position-left">
+        <label class="msg-title">{{list.gatherLocation}}</label>
+      </view>
+      <view class="position-center">
+        <label>
+          <image src="../icon/arrow.png" class="arrow"></image>
+        </label>
+      </view>
+      <view class="position-right">
+        <label class="msg-title">{{list.targetLocation}}</label>
+      </view>
+    </view>
+    <view class="time">
+      <image class="time-icon" src="../icon/time.png"></image>
+      <label class="time-text msg-title">{{list.departureTime}}</label>
+    </view>
+    <view class="remark">
+      <label class="msg-remark">备注：{{list.remark}}</label>
+    </view>
+    <view class="status" style="display:{{displayStatus}}">
+      <view class="status-info">
+        <label class="msg-content">已参团</label>
+      </view>
+    </view>
+  </view>
+  <view class="bottom_footer">
+    <button type="{{buttonType}}" bindtap="{{buttonFnc}}">{{buttonText}}</button>
+  </view>
+  <view class="userlist">
+    <scroll-view class="scroll-view_H" scroll-y="true">
+      <view wx:for="{{userList}}" class="userComp">
+        <view class="group-user">
+          <image class="user-img" src="{{userList[index].imgSrc}}"></image>
+        </view>
+
+        <!--<image class="user-img" src="image/people.png"></image>
+                <view class="group-user">
+                    <label class="group-user-info">Allen</label>
+                    <label class="group-user-info">13631245621</label>
+                </view>-->
+        <view class="group-user msg-content">
+          <view class="group-user margin_top">
+            <label class="group-user-info">{{userList[index].name}}</label>
+          </view>
+          <view class="group-user margin_top">
+            <label class="group-user-info">{{userList[index].phone}}</label>
+          </view>
+          <view wx:if="{{userList[index].imgSrc == userInfo.avatarUrl}}" class="group-user margin_top">
+            <image src="../icon/{{imageName}}" class="sign-img" bindtap="departure"></image>
+          </view>
+          <view wx:elif="{{userList[index].departure == true}}" class="group-user margin_top">
+            <image src="../icon/leave.png" class="sign-img"></image>
+          </view>
+          <view wx:if="{{userList[index].leader == true}}" class="group-user margin_top">
+            <image src="../icon/togetherFlag.png" class="sign-img"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<modal title="参加集结" class="modal" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+  <view class="join-action">
+
+    <!--<label class="weui-label">姓名：</label>-->
+    <image src="../icon/name.png" class="nameIcon"></image>
+    <input type="text" maxlength="15"  class="weui-input info-input {{nullInputName}}" placeholder="请输入姓名" focus bindblur="bindInputName" bindinput="bindInput" value="{{name}}" />
+  </view>
+  <view style="margin-top:30rpx">
+    <picker mode="date" value="{{date}}" start="{{date}}" end="{{dateTo}}" bindchange="bindDateChangeFrom">
+      <view class="datechose">
+        <label class="date-chose-label">{{dateFrom}}</label>
+        <image src="../icon/calender.png" class="dateIcon"></image>
+      </view>
+    </picker>
+    <view class="datelabel">
+      <label>-</label>
+    </view>
+    <picker mode="date" value="{{date}}" start="{{dateFrom}}" end="{{dateTo}}" bindchange="bindDateChangeTo">
+      <view class="datechose">
+        <label class="date-chose-label">{{dateTo}}</label>
+        <image src="../icon/calender.png" class="dateIcon"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="join-action" style="margin-top:110rpx">
+    <image src="../icon/tel.png" class="nameIcon"></image>
+    <input type="number" maxlength="12" class="weui-input info-input {{nullInputPhone}}" placeholder="请输入手机号" focus bindblur="bindInputPhone" bindinput="bindInput" value="{{phone}}" />
+  </view>
+  <view wx:if="{{haveLeader != true}}" style="margin-top:30rpx" class="join-action">
+    <checkbox-group bindchange="chooseCheckbox">
+      <checkbox class="checkBox">成为团长</checkbox>
+    </checkbox-group>
+  </view>
+</modal>

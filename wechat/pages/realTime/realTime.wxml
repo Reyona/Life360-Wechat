@@ -1,0 +1,24 @@
+<view class="condition-panel">
+    <view class="section">
+        <picker bindchange="reloadPoint" value="{{conditionIndex}}" range="{{conditionRange}}">
+            <view class="picker">
+                <label class="condition-label">
+                    <text>班车</text>
+                </label>
+                <label class="condition-context">
+                    <text>{{conditionRange[conditionIndex]}}</text>
+                </label> 
+            </view>
+            
+        </picker>
+    </view>
+    <view class="section-right">
+        <label class="share-location">
+            <text class="share-location-label">共享位置</text>
+            <switch checked bindchange="switchShareLocation"/>
+        </label>
+    </view>
+</view>
+<view class="content">
+    <map class="real-time-map" markers="{{userPoint}}" include-points="{{mapBounds}}"></map>
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/complaint/home_v2/home_v2",
+    "pages/complaint/comment/comment",
+    "pages/complaint/publish/publish",
+    "pages/notice/home/notice",
+    "pages/notice/publish/publish",
+    "pages/togethergohome/index/index",
+    "pages/togethergohome/addTip/addTip",
+    "pages/togethergohome/tipsdetail/tipsdetail",
+    "pages/sos/home/home",
+    "pages/realTime/realTime"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#50c5b7",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#50c5b7",
+    "borderStyle": "white",
+    "list": [
+      
+      {
+        "pagePath": "pages/complaint/home_v2/home_v2",
+        "selectedIconPath": "resources/complaint_select.png",
+        "iconPath": "resources/complaint_no_select.png",
+        "text": "吐槽"
+      },
+      {
+        "pagePath": "pages/togethergohome/index/index",
+        "selectedIconPath": "resources/aggregate_select.png",
+        "iconPath": "resources/aggregate_no_select.png",
+        "text": "集结"
+      },
+      {
+        "pagePath": "pages/notice/home/notice",
+        "selectedIconPath": "resources/notice_select.png",
+        "iconPath": "resources/notice_no_select.png",
+        "text": "头条"
+      },
+      {
+        "pagePath": "pages/realTime/realTime",
+        "selectedIconPath": "resources/map_select.png",
+        "iconPath": "resources/map_no_select.png",
+        "text": "班车"
+      }
+    ]
+  }
+}

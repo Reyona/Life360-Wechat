@@ -1,0 +1,12 @@
+<view class="flex-wrp">
+    <view class="top-panel">
+        <icon type="safe_warn" size="25" color="grey" style="margin-left:30px"/>
+        <text class="tips">紧急求助按钮，请在紧急情况下使用</text>
+    </view>
+    <view class="center-panel">
+        <text>现在这个人被刀了了，要不要救？ 要不要毒？</text>
+    </view>
+    <view class="bottom-panel">
+        <image class="sos-button" src="../icon/sos.png" mode="aspectFit" bindtap="addNewComplaint"></image>
+    </view>
+</view>

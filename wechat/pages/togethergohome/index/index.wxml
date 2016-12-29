@@ -1,0 +1,97 @@
+<view bindtouchstart="touchStart" bindtouchend="touchEnd">
+
+  <!--head view-->
+  <view class="filter-panel" style="height : {{divCompSize.height*0.15}}px">
+    <view class="filter-panel-date">
+      <picker mode="date" value="{{currentDate}}" start="{{defaultCurrentDate}}" end="2080-09-01" bindchange="bindDateChange">
+        <view>
+          <label class="date-chose-label">{{currentDate}}</label>
+          <image src="../icon/calender.png" class="filter-panel-date-icon"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="filter-panel-join">
+      <switch bindchange="switchChange"></switch>
+      <view style="margin-right: 10px">只显示已参加</view>
+    </view>
+  </view>
+
+  <!--content-->
+  <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+      <view class="box-note-comp" bindtap="tapEvent" id="{{item._id}}">
+        <view class="box-note-body-comp" style="transition-delay:0ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-30}}px;width : {{divCompSize.width-20}}px; background-color:{{item.bgcolor}}">
+          <view>
+            <image src="../icon/thumbtack.png" style="width: 20px;height: 20px;float:right;margin-top: -0.5em;opacity: 0.9;"></image>
+          </view>
+          <view class="note-title">{{item.type == 'AFTER_WORK'?"下班":"上班"}}</view>
+          <view class="note-block">
+            <view class="note-block-item">
+              <view>{{item.gatherLocation}}</view>
+              <view class="note-arrow"></view>
+              <view>{{item.targetLocation}}</view>
+            </view>
+            <view class="note-block-item" style="text-align: right">
+              <view>
+                <image src="/resources/icon-user.png" style="width: 30px;height: 30px"></image>
+              </view>
+              <view>{{item.people.length}}</view>
+            </view>
+          </view>
+          <view class="note-block">
+            <view class="note-block-item">
+              {{item.departureTime}}
+            </view>
+            <view class="note-block-item" style="display:{{item.displayJoinbtn}}">
+              <view class="join-btn" catchtap="modalTap" id="{{item._id}}" style="height : {{divCompSize.height*0.17}}px;width : {{divCompSize.height*0.17}}px">
+                参加
+              </view>
+            </view>
+            <view class="note-block-item" style="display:{{item.displayStatus}};height : {{divCompSize.height*0.17}}px;width : {{divCompSize.height*0.17}}px">
+              <view class="joined-btn">
+                <label class="msg-content">已参团</label>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!--start view-->
+</view>
+<image class="addComplaint-img" src="../../../resources/add.png" catchtap="goToAddTipsPage"></image>
+<modal title="参加集结" class="modal" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+  <view class="join-action">
+
+    <!--<label class="weui-label">姓名：</label>-->
+    <image src="../icon/name.png" class="nameIcon"></image>
+    <input type="text" maxlength="15" class="weui-input info-input {{nullInputName}}" placeholder="请输入姓名" focus bindblur="bindInputName" bindinput="bindInput" value="{{name}}" />
+  </view>
+  <view style="margin-top:30rpx">
+    <picker mode="date" value="{{dateFrom}}" start="{{defaultCurrentDate}}" end="{{afterSevenDate}}" bindchange="bindDateChangeFrom">
+      <view class="datechose">
+        <label class="date-chose-label">{{dateFrom}}</label>
+        <image src="../icon/calender.png" class="dateIcon"></image>
+      </view>
+    </picker>
+    <view class="datelabel">
+      <label>-</label>
+    </view>
+    <picker mode="date" value="{{dateTo}}" start="{{defaultCurrentDate}}" end="{{afterSevenDate}}" bindchange="bindDateChangeTo">
+      <view class="datechose">
+        <label class="date-chose-label">{{dateTo}}</label>
+        <image src="../icon/calender.png" class="dateIcon"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="join-action" style="margin-top:110rpx">
+    <image src="../icon/tel.png" class="nameIcon"></image>
+    <input type="number" maxlength="12" class="weui-input info-input {{nullInputPhone}}" placeholder="请输入手机号" focus bindblur="bindInputPhone" bindinput="bindInput" value="{{phone}}" />
+  </view>
+  <view wx:if="{{haveLeader != true}}" style="margin-top:30rpx" class="join-action">
+    <checkbox-group bindchange="chooseCheckbox">
+      <checkbox class="checkBox">成为团长</checkbox>
+    </checkbox-group>
+  </view>
+</modal>

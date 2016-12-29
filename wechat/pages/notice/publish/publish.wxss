@@ -1,0 +1,61 @@
+.box-radius-border {
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.title {
+    margin-top:20px;
+    padding: 5px;
+    width: 90%;
+}
+
+.content {
+    clear:both;
+    padding: 5px;
+    height: 200px;
+    width: 90%;
+}
+
+.submit-btn {
+    clear:both;
+    margin-top:50px;
+    margin-bottom: 30px;
+    height: 82rpx;
+    width: 40%;
+    border: 1px solid #ebebeb;
+    background-color: #50c5b7;
+    color:white;
+    line-height: 82rpx;
+}
+
+.type-group {
+    padding: 5px;
+    margin: 15px 10px 10px 10px;
+    width: 90%;
+    display:flex;
+    text-align: center;
+}
+
+.type-option {
+    flex:1;
+}
+
+.expire {
+    padding: 5px;
+    margin: 15px 10px 10px 10px;
+    width: 90%;
+    display:flex;
+}
+
+.expire-label {
+    flex:2;
+}
+
+.expire-date {
+    flex:2;
+}
+
+.expire-time {
+    flex:1;
+}

@@ -1,0 +1,84 @@
+<view class="notice-view">
+
+    <form catchreset="clearSearch">
+        <view class="search-bar">
+            <input type="text" placeholder="搜索" bindinput="doSearch" style="flex:8.5; background-color: #ffffff;"/>
+            <button class="btn-reset" form-type="reset"></button>
+        </view>
+    </form>
+
+    <scroll-view class="notice-scroll-view"
+                 scroll-y="true" upper-threshold="10" lower-threshold="5"
+                 bindscrolltolower="lower">
+
+<!--        <view class="scroll-item">
+            <view class="flex-wrp">
+                <view class="title-left-panel">
+                    TEST
+                </view>
+                <view class="title-right-panel">
+                    2016-12-31
+
+                </view>
+            </view>
+            <view class="{{item.show!=null && item.show?'':'collapse-close'}}">
+                TEST TEST TEST TEST TEST TEST
+            </view>
+
+            <image src="{{url}}" catchtap="previewPic" data-url="{{url}}"></image>
+
+        </view>-->
+
+        <text hidden>
+            isAdmin:{{isAdmin}}
+        </text>
+
+        <block wx:for="{{messageList}}" wx:for-item="item">
+            <view class="scroll-item" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtap="tapEvent" data-index="{{item.index}}">
+
+                <view class="flex-wrp">
+                    <view class="title" >
+                        {{item.title}}
+                    </view>
+                    <view>
+                        <image src="{{typeIcon[item.type]}}" class="type-icon"></image>
+                    </view>
+
+                </view>
+                <view class="content {{item.show!=null && item.show?'':'collapse-close'}}" data-index="{{item.index}}" catchtap="collapse">
+                    <text>
+                        {{item.content}}
+                    </text>
+                </view>
+
+                <block>
+                    <view wx:if="{{item.show==null || !item.show}}" data-index="{{item.index}}" catchtap="collapse">
+                        <image class="collapse-btn" mode="aspectFit"
+                               src="/resources/expand_more.png"></image>
+                    </view>
+                    <view wx:elif="{{item.needColl===true}}" data-index="{{item.index}}" catchtap="collapse">
+                        <image class="collapse-btn" mode="aspectFit"
+                               src="/resources/expand_less.png"></image>
+                    </view>
+                </block>
+                <view class="flex-wrp">
+                    <view class="bottom-left-panel">
+                        <view>
+                            来自{{item.author}}于{{item.createdDate}}
+                        </view>
+                        <view hidden="{{item.isExpired}}">
+                            本消息持续到{{item.effectiveEndDate}}
+                        </view>
+                    </view>
+                    <view class="bottom-right-panel" hidden="{{item['isWeather'] || !isAdmin}}">
+                       <!-- <image src="/resources/delete_gray.png" class="delete-btn"
+                               catchtap="delete" data-index="{{item.index}}"></image> -->
+                    </view>
+
+                </view>
+            </view>
+        </block>
+
+    </scroll-view>
+    <image class="addComplaint-img" src="../../../resources/add.png" catchtap="publish"></image>
+</view>

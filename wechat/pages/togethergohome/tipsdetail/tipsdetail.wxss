@@ -1,0 +1,221 @@
+.ticket{
+    margin: 35rpx;
+    border-radius: 20rpx;
+    box-shadow:0 0 30rpx #808080;
+    opacity: 0.7;
+    padding-bottom: 20rpx;
+}
+.thumbtack{
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    float: right;
+    opacity: 0.8;
+    margin-right: 10px;
+    margin-top: -6px;
+}
+.people{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.people-left{
+    width: 65%;
+}
+.people-right{
+    width: 50%;
+    margin-top: 12px;
+}
+.people-icon{
+    margin-top: 15px;
+    height: 50rpx;
+    width: 50rpx;
+    float:right;
+}
+.people-text{
+    margin-left: 10rpx;
+    -webkit-text-fill-color: red;
+    float:left;
+    margin-top:8px;
+
+}
+.position{
+    display: flex;
+    flex-direction: row;
+}
+.position-left {
+    text-align: center;
+    width:35%;
+}
+.position-center {
+    text-align: center;
+    width:30%;
+}
+.position-right {
+    text-align: center;
+    width:35%;
+}
+.from{
+    margin: 5px 10px 0px 10px;
+    float: left;
+    width: 200rpx;
+    white-space:normal;
+}
+.arrow{
+    height: 50rpx;
+    width: 70rpx;
+}
+.to{
+    margin: 5px 10px 0px 10px;
+    float: right;
+    width: 200rpx;
+    white-space:normal;
+}
+.time{
+    margin: 5rpx 0rpx 0rpx 235rpx;
+    margin-top: 10px;
+    clear: both;
+}
+.time-icon{
+    height: 50rpx;
+    width: 50rpx;
+}
+.time-text{
+    margin-left: 20rpx;
+    margin-top: 5rpx;
+    position: absolute;
+    font-size: 30rpx;
+}
+.remark{
+    margin-left: 35rpx;
+    height:100rpx;
+    width:350rpx;
+}
+.msg-content{
+  font-size: 14px;
+  font-family:  Microsoft YaHei;
+}
+.msg-title{
+  font-size: 16px;
+  font-weight: bold;
+  font-family:  Microsoft YaHei;
+}
+.msg-remark{
+  font-size: 12px;
+  font-family:  Microsoft YaHei;
+  opacity: 0.6;
+}
+.status{
+    height: 120rpx;
+    width: 120rpx;
+    border: 2px dashed #000;
+    border-radius: 50%;
+    float: right;
+    margin-top: -100rpx;
+    margin-right: 50rpx;
+}
+.status-info{
+    transform:rotate(-20deg);
+    text-align: center;
+    margin-top: 30rpx;
+}
+.scroll-view_H{
+  float: left;
+  padding-bottom: 85rpx;
+}
+.group-info{
+    float: left;
+    margin-left: 15rpx;
+}
+.group-user{
+    margin-top: 20rpx;
+    margin-left: 10rpx;
+    float: left;
+}
+.group-user-info{
+    margin-left: 30rpx;
+}
+.margin_top{
+    margin-top:15rpx;
+}
+.userlist{
+    margin: 10rpx;
+    margin-top: 65rpx;
+}
+.user-img{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+.sign-img{
+    width: 50rpx; 
+    height: 50rpx;
+    margin-left: 20rpx;
+}
+.bottom_footer {  
+    position: fixed;
+    bottom: 0px;
+    font-size: 20rpx;
+    width: 100%;
+    z-index: 999;
+}
+.join-action {
+    padding: 10rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.nameIcon{
+    width: 65rpx; 
+    height: 50rpx;
+}
+.info-input{
+    margin-left: 15rpx;
+    border-bottom: 1px solid #D9D9D9;
+}
+.weui-input {
+    width: 100%;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.41176471em;
+    line-height: 1.41176471;
+}
+.datechose{
+    float: left;
+    width: 40%;
+    border: 1px solid #D9D9D9;
+}
+.date-chose-label{
+    font-size: 25rpx;
+    margin: 15rpx;
+}
+.dateIcon{
+    width: 50rpx; 
+    height: 50rpx;
+    float:right;
+}
+.datelabel{
+    width: 10%;
+    float: left;
+    margin: 5rpx;
+    margin-left: 40rpx;
+    -webkit-text-fill-color: #000;
+}
+.checkBox{
+    font-size: 30rpx;
+}
+.input-null{
+    border:1px solid red
+}
+.userComp{
+    height: 100rpx;
+    padding-left: 20rpx;
+}

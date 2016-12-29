@@ -1,0 +1,26 @@
+<view>
+  <scroll-view class="addBtn-slide" wx-if="{{ modalHidden==false }}" hidden>
+  </scroll-view>
+  <scroll-view class="addBtn-slide" wx-if="{{ modalHidden==true }}" scroll-y="true">
+    <view class="addBtn-slide-content" bindtap="sendTap">
+        <image class="addBtn-slide-content-face" src="icon/soso.png"/>
+        <text class="addBtn-slide-content-text">啥都不想说，就只想鄙视你~</text>
+    </view>
+    <view class="addBtn-slide-content" bindtap="sendTap">
+        <image class="addBtn-slide-content-face" src="icon/smile.png"/>
+        我只是一个吃瓜群众，刷一波存在感~
+        
+    </view>
+    <view class="addBtn-slide-content" bindtap="sendTap">
+        <image class="addBtn-slide-content-face" src="icon/cry.png"/>
+        无力吐槽，已卒~
+        
+    </view>
+    <view class="addBtn-slide-content" bindtap="sendTap">
+        <image class="addBtn-slide-content-face" src="icon/anger.png"/>
+        这是什么鬼？！~
+        
+    </view>
+  </scroll-view>
+  <image class="addBtn" src="../../../resources/add.png" bindtap="addTap"/>
+</view>

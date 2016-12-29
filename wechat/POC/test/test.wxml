@@ -1,0 +1,12 @@
+<view class="card-panel" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <block wx:for="{{elemPostion}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="card" style="top:{{item.top}};left:{{item.left}};width:{{item.width}};font-size:{{item.fontSize}};z-index:{{item.zIndex}};" wx:if="{{!item.isHidden}}">{{item.text}}</view>
+    </block>
+
+    
+</view>
+<view class="txt-panel">
+<block wx:for="{{testText}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="card-text" style="top:{{item.top}};left:{{item.left}};width:{{item.width}};font-size:{{item.fontSize}};z-index:{{item.zIndex}};">{{item.text}}</view>
+    </block>
+</view>

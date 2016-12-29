@@ -1,0 +1,49 @@
+.addBtn {
+    float: right;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 0;
+    border: 0 solid #ffffff;
+    border-radius: 50px;
+    box-shadow: 3px 1px 1px #cccccc;
+    margin: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+.addBtn-slide {
+    float: right;
+    background-color:azure;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 0;
+    border: 0 solid #ffffff;
+    border-radius: 20px;
+    box-shadow: 5px 2px 1px #cccccc;
+    margin: 16px;
+    width: 85%;
+    height: 200px;
+}
+
+.addBtn-slide-content {
+    padding: 5px;
+    border-radius: 5px;
+    background-color:beige;
+    bottom: 20px;
+    right: 10px;
+    margin: 16px;
+    width: 76%;
+}
+
+
+.addBtn-slide-content-face {
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+.addBtn-slide-content-text {
+    
+}

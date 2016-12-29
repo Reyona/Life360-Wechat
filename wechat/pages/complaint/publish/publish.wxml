@@ -1,0 +1,59 @@
+<view>
+
+     <view class="preImage-comp" wx:if="{{isShowPreviewImage}}">
+        <view class="preImagemask" bindtap="cancelPreviewImage" ></view>
+        <image src="{{previewImage}}" class="preImage" mode="aspectFit"></image>
+      </view>
+
+    <view>
+        <view class="box-note-comp">
+            <view class="box-note-body-comp" style="height : auto;width : 93%; margin-left:auto;margin-right:auto;background-color:#A4D3EE">
+                <view>
+                    <!--<view class="box-radius-border" hidden>
+                        <input placeholder="给您的吐槽取个名字吧" auto-focus type="text" bindinput="titleInputEvent" class="title" maxlength="100"/>
+                    </view>-->
+                    <view class="box-radius-border box-publish-description">
+                        <textarea autofocus  placeholder="您可以在这里尽情吐槽" placeholder-style="color:#666;" type="text" bindinput="contentInputEvent"  class="description" maxlength="2000"/>
+                        <view class="add-pic-section">
+                            <block wx:for-items="{{files}}" wx:key="{{index}}">
+                                <view class="weui-uploader__file">
+                                    <image class="weui-uploader__img" id="{{item}}" src="{{item}}" mode="aspectFit"
+                                           bindlongtap="previewImage" bindtouchend="cancelPreviewImage"/>
+                                    <image src="/pages/complaint/icon/delete.png" id="{{item}}-del" class="delete-pic-comp" bindtap="removePictureEvent"/>
+                                </view>
+                            </block>
+                            <view class="weui-uploader__input-box" wx:if="{{isNotMaxPicture}}">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                        <!--            <view class="publish-anonymity-comp">
+                                        <view class="publish-anonymity-switch"><switch type="checkbox" bindchange="changeAnonymityEvent"/></view>
+                                        <view class="publish-annoymity-label">匿名发布</view>
+                                    </view>-->
+                    </view>
+                </view>
+                
+                <view class="box-emoticion-section">
+                    <!--       <view class="emoticion-label">请大爷赏个脸：</view>-->
+                    <view class="emoticion-comp"><image id="smile" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/smile.png" style="background-color: {{emoticionStatus.smile}}"/></view>
+                    <view class="emoticion-comp"><image id="soso" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/soso.png" style="background-color: {{emoticionStatus.soso}}"/></view>
+                    <view class="emoticion-comp"><image id="cry" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/cry.png" style="background-color: {{emoticionStatus.cry}}"/></view>
+                    <view class="emoticion-comp"><image id="anger" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/anger.png" style="background-color: {{emoticionStatus.anger}}"/></view>
+                    <view class="emoticion-comp"><image id="sleepy" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/sleepy.png" style="background-color: {{emoticionStatus.sleepy}}"/></view>
+                    <view class="emoticion-comp"><image id="speechless" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/speechless.png" style="background-color: {{emoticionStatus.speechless}}"/></view>
+                </view>
+                
+            </view>
+
+        </view>
+
+    </view>
+
+    <view class="publish-btn-section">
+        <button class="publish-btn" bindtap="publishComplaint">实名吐槽</button>
+        <button class="publish-btn" bindtap="anonymousComplaint">匿名吐槽</button>
+    </view>
+
+
+</view>
+

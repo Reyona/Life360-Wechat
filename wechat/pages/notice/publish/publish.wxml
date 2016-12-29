@@ -1,0 +1,28 @@
+<view xmlns:wx="http://www.w3.org/1999/xhtml">
+    <form bindsubmit="publish">
+        <view>
+            <input name="title" class="box-radius-border title"
+                   maxlength="50" auto-focus placeholder="给你的头条取一个标题吧" bindconfirm="switchToContent" bindinput="getTitle"/>
+            <textarea name="content" class="box-radius-border content"
+                      maxlength="1000" placeholder="发布什么呢" focus="{{contentFocus}}" bindinput="getContent"/>
+            <radio-group name="type"
+                         class="type-group" bindchange="radioChange" hidden="{{!isAdmin}}">
+                <label class="type-option" wx:for="{{items}}">
+                    <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+                </label>
+            </radio-group>
+            <view class="expire" hidden="{{isNews}}">
+                <text class="expire-label">公告结束时间</text>
+
+                <picker name="effectiveEndDate" class="expire-date"
+                        mode="date" value="{{date}}" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{date}}
+                    </view>
+                </picker>
+            </view>
+            <button name="submit-btn" class="submit-btn"
+                    form-type="submit">发布</button>
+        </view>
+    </form>
+</view>

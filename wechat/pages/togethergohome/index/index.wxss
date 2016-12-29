@@ -1,0 +1,183 @@
+page{
+    background : #FFFFF3;
+}
+.box-body-comp {
+    float: left;
+    perspective: 1000px;
+    transform: rotate(-2deg);
+}
+
+.box-note-comp {
+    margin-top: 21px;
+    margin-left: 11px;
+}
+
+.box-note-body-comp {
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+    background: #EEE685;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    color: #777;
+}
+
+.note-title {
+    text-align: center;
+}
+
+.note-block {
+    display: flex;
+    flex-direction: row;
+    margin: 20rpx;
+    font-size: .7em;
+}
+
+.note-block-item {
+    clear: both;
+    flex: 1;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.join-btn {
+    bottom: 0px;
+    margin-bottom: 30rpx;
+    margin-left: 0rpx;
+    position: fixed;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: orange;
+    border: 2px solid orange;
+    font-size: 0.8em;
+    
+}
+
+.note-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10rpx 10rpx 0 10rpx;
+    border-color: #777777 transparent transparent transparent;
+    margin: 20rpx auto;
+}
+
+.filter-panel {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10rpx;
+    font-size: .8em;
+    color: #777;
+    
+    line-height: 1.5;
+}
+
+.filter-panel-date {
+    flex: 1;
+}
+
+.filter-panel-date-icon {
+opacity: 0.5;
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+}
+
+.filter-panel-join {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+
+.join-action {
+    padding: 10rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.nameIcon{
+    width: 65rpx; 
+    height: 50rpx;
+}
+.info-input{
+    margin-left: 15rpx;
+    border-bottom: 1px solid #D9D9D9;
+}
+.weui-input {
+    width: 100%;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.41176471em;
+    line-height: 1.41176471;
+}
+.datechose{
+    float: left;
+    width: 40%;
+    border: 1px solid #D9D9D9;
+}
+.date-chose-label{
+    font-size: 28rpx;
+    margin: 15rpx;
+}
+.dateIcon{
+    width: 40rpx; 
+    height: 40rpx;
+    float:right;
+    opacity: 0.5;
+}
+.datelabel{
+    width: 10%;
+    float: left;
+    margin: 5rpx;
+    margin-left: 40rpx;
+    -webkit-text-fill-color: #000;
+}
+.checkBox{
+    font-size: 30rpx;
+}
+.input-null{
+    border:1px solid red
+}
+
+
+.status{
+    height: 90rpx;
+    width: 90rpx;
+    border: 1px dashed #000;
+    border-radius: 50%;
+    float: right;
+    margin-bottom: 20rpx;
+    position: fixed;
+    margin-left: 120rpx;
+    bottom: 0px;
+}
+.joined-btn{
+    transform:rotate(-20deg);
+    bottom: 0px;
+    margin-bottom: 30rpx;
+    margin-left: 0rpx;
+    position: fixed;
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+    line-height: 80rpx;
+    font-size: 0.8em;
+    border: 1.5px dashed #000;
+}
+.input-null{
+    border:1px solid red
+}

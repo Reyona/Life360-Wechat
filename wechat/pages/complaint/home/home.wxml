@@ -1,0 +1,31 @@
+<view class="flex-wrp" >
+
+   <view class="flex-item" bindtap="goToDetail" wx:for="{{complainDatas}}" data-index="{{item.rowId}}">
+       <view class="left-panel">
+            <image class="emotion" mode="aspectFit" src="{{item.emoticion}}"></image>
+            <view class="comment">
+                <image class="comment-pic" mode="aspectFit" src="../icon/comment.png"></image>
+                <view class="hot-view">{{item.hot}}</view>
+            </view>
+       </view> 
+       <view class="right-panel">
+            <view class="{{item.bgcolor}}">
+                <view class="title-view">
+                    <text>{{item.title}}</text>
+                </view>
+            </view>    
+            <view class="bottom-view-item">
+                <view class="author-view">
+                    <text>{{item.nickName}}</text>
+                    <text>{{item.updateTime}}</text>
+                </view>
+            </view>
+       </view> 
+   </view>
+
+    <image animation="{{animation}}" class="addComplaint-img" src="../../../resources/add.png" bindtap="addNewComplaint"></image>
+
+ 
+</view>
+
+

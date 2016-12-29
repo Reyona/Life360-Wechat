@@ -1,0 +1,29 @@
+.card-panel{
+    width:100%;
+    height:500px;
+    display:block;
+    position: relative;
+    background:#999;
+}
+
+.txt-panel{
+    width:100%;
+    height:500px;
+    display:block;
+    position: relative;
+}
+
+.card{
+    height:100px;
+    position: absolute;
+    background-color: blanchedalmond;
+    border: 1px solid #FFF;
+    border-radius: 1px;
+    box-shadow:0 0 10px rgba(0, 0, 0, .5); 
+    padding:5px;
+}
+
+.card-text{
+    height:100px;
+    position: absolute;
+}

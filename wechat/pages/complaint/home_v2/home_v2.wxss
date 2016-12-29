@@ -1,0 +1,87 @@
+page{
+    background : #FFFFF3;
+}
+.box-body-comp {
+    float: left;
+    perspective: 1000px;
+    transform:rotate(-2deg);
+}
+
+.box-note-comp {
+    margin-top: 21px;
+    margin-left: 11px;
+}
+
+.box-note-body-comp {
+    transform-style: preserve-3d;
+    transition:all .5s ease-in-out;
+    background: #F7E999;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.box-note-body-comp:before {
+    display: block;
+    content: "";
+    background: rgba(227, 200, 114, 0.40);
+    width: 174rpx;
+    height: 56rpx;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 6px/18px 0;
+    position: absolute;
+    top: -26rpx;
+    left: 80rpx;
+    transform: rotate(-2deg);
+}
+
+
+.box-main-content{
+    height: 100%;
+    width: 100%;
+}
+
+.box-home-nickName{ 
+    padding:10rpx;  
+    padding-top: 25rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    font-family:  Microsoft YaHei;
+    line-height:65rpx;
+    color:#666;
+}
+
+.box-home-content{
+    padding-left: 20rpx;
+    padding-right: 20rpx;  
+    font-size: 28rpx;
+    font-family:  Microsoft YaHei;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#101010;
+}
+
+.box-emotiction-comp{
+    float : left;
+    padding-left:10rpx; 
+    line-height: 20rpx;
+    margin-top:10rpx;
+}
+
+.box-home-date{
+    float : right;
+    padding-right: 10rpx; 
+    justify-content: flex-end;
+    margin-top: 8px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 24rpx;
+    margin-right: 5px;
+    opacity: 0.3;
+    line-height: 30rpx;
+    color:#666;
+}
+
+.box-content-text{
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}

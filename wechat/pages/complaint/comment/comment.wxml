@@ -1,0 +1,180 @@
+<block wx:for="{{tamuList}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" >
+  <view wx:if="{{bulletScreen}}" class="tanmu-text" style="top:{{item.top}};left:{{item.left}};width:{{item.width}};font-size:{{item.fontSize}};z-index:{{item.zIndex}};color:{{item.color}}">
+    {{item.text}}
+  </view>
+  
+</block>
+<view class="container-desc" bindtap="touch">
+  <view class="descs-swiper-item">
+    <!--<import src="templates/descItem.wxml" />-->
+    <!--<template is="desc-item" data="{{item: item}}" />-->
+
+
+
+
+
+
+
+
+
+
+
+    <view class="desc-control">
+
+
+      <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp">
+          <view class="box-note-body-comp" style="background-color:{{contentColor}}">
+
+
+
+
+
+            <view class="comment-main-container">
+              <view class="comment-user">
+                <text>{{item.isAnonymity?"匿名用户":item.nickName}}：</text>
+                <image wx:if="{{item.emoticion && item.emoticion!=''}}" class="comment-emoticion" src='../icon/{{item.emoticion}}.png'/>
+              </view>
+
+              <view class="comment-content {{item.show!=null && item.show?'':'collapse-close'}}" catchtap="collapse">
+                <text class="box-content-text">{{item.content}}</text>
+
+              </view>
+
+              <block>
+                <view wx:if="{{item.show==null || !item.show}}" catchtap="collapse">
+                  <image class="collapse-btn" mode="aspectFit"
+                         src="/resources/expand_more_2.png"></image>
+                </view>
+                <view wx:elif="{{item.needColl===true}}" catchtap="collapse">
+                  <image class="collapse-btn" mode="aspectFit"
+                         src="/resources/expand_less_2.png"></image>
+                </view>
+              </block>
+
+
+
+              <scroll-view class="image-scrollview" scroll-x="true" wx:if="{{item.picUrls.length>0}}">
+                <image class="image-display" wx:for="{{item.picUrls}}" wx:for-item="item" wx:for-index="id"
+                       id="{{item}}" style="width: 70px; height: 70px; background-color: #eeeeee;" mode="aspectFit"
+                       src="{{item}}" bindtap="preview">
+                </image>
+              </scroll-view>
+
+              <view class="comment-date">
+                <text>发表于 {{item.createdDate}}</text>
+              </view>
+
+
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+  <swiper-item style="clear:both">
+        <scroll-view scroll-y="true" class="comment-container" scroll-top="{{chatItemLength}}"  >
+
+      <!--<view class="comment-container">-->
+      <view class="chat-box" wx:if="{{item.comments.length >0}}"   wx:for-item="reply" wx:for-index="i" wx:for-index="idx" id="{{idx}}">
+                    
+
+        <!--<view class="message-box left-img" wx:for="{{item.comments}}"-->
+        <view class="{{reply.nickName==nickName?'message-box right-img':'message-box left-img'}}" wx:for="{{item.comments}}" wx:for-item="reply" wx:for-index="i">
+          <view style="{{reply.nickName==nickName?'float:right':'left'}}">
+            <text class="name">{{reply.isAnonymity==false?reply.nickName:"匿名"}}</text>
+          </view>
+          <view style="position:relative">
+            <view class="picture">
+            <image wx:if="{{reply.emoticion!=''}}" src='../icon/{{reply.emoticion}}.png' />
+            <image wx:else src="../icon/smile.png"></image>
+          </view >
+          <view class="message" style="{{reply.nickName==nickName?'float:right':''}}">
+            <!--<span> {{reply.nickName}}+++++++{{nickName}}</span> -->
+            <p>{{reply.message}}</p>
+          </view>
+          </view>
+          
+        </view>
+      </view>
+
+      <!--</view>-->
+    </scroll-view>
+  </swiper-item>
+</view>
+<view>
+  <scroll-view class="addBtn-slide" wx-if="{{ modalHidden==false }}" hidden>
+  </scroll-view>
+  
+  <scroll-view class="addBtn-slide" wx-if="{{ modalHidden==true }}" scroll-y="true">
+    <block wx:for="{{defaultMessage}}" wx:for-item="item" >
+      <view class="addBtn-slide-content" data-msgindex="{{item.name.id}}" catchtap="sendTap" id="{{item.name.id}}" >
+        <image class="addBtn-slide-content-face" src="{{item.name.imageSrc}}" />
+        <text class="addBtn-slide-content-text">{{item.name.text}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <image class="addBtn" src="../../../resources/defaultMsg_2.png" bindtap="addTap" />
+</view>
+<view class="commontsPanel" style="overflow:hidden">
+
+  <!--add button content-->
+  <view class="emotion-panel">
+    <view class="emoticion-comp">
+      <image id="smile" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/smile.png" style="background-color: {{emoticionStatus.smile}}" />
+    </view>
+    <view class="emoticion-comp">
+      <image id="soso" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/soso.png" style="background-color: {{emoticionStatus.soso}}" />
+    </view>
+    <view class="emoticion-comp">
+      <image id="cry" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/cry.png" style="background-color: {{emoticionStatus.cry}}" />
+    </view>
+    <view class="emoticion-comp">
+      <image id="anger" class="box-pic" bindtap="changeEmotictionEvent" src="/pages/complaint/icon/anger.png" style="background-color: {{emoticionStatus.anger}}" />
+    </view>
+
+    <!--<checkbox-group bindchange="checkboxChange"><label style='margin:0 10px 0 auto;color:#000'>-->
+
+    <!--<checkbox value="check"></checkbox>-->
+
+    <!--<text>匿名</text>-->
+
+    <!--</label></checkbox-group>-->
+        <view class="danmu">
+            <!--<view class="danmu1">-->
+                <switch style="zoom:0.7" checked bindchange="switchChange"/>
+              <label for="" style="color:black ;font-size:29rpx">弹幕</label>
+            <!--</view>-->
+        </view>
+    <view style="flex:3.5">
+      <button class="send-button-anymous" id="anonymous" bindtap="push">匿名发布</button>
+    </view>
+  </view>
+  <view class="input-and-button-panel">
+    <input class="input-class" focus="true" style='color: #000000' style="border: 1px solid #d3d3d3;" type="text" bindblur="bindKeyInput" placeholder="评论内容" placeholder-style="font-family:Microsoft YaHei;font-size:34rpx"    value="{{inputValue}}" />
+    <button class="send-button" type="button" bindtap="push" id="real">实名发布</button>
+  </view>
+</view>
+
+<!--<button bindtap="commontsPanelShow" class="commonts-send" wx:if="{{isCommontsButttonShow}}">谈一谈</button>-->

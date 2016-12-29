@@ -1,0 +1,57 @@
+<view bindtouchstart="touchStart" bindtouchend="touchEnd">
+
+    <view class="filter-panel">
+        <view class="filter-panel-date">
+            2011-11-11
+        </view>
+        <view class="filter-panel-join">
+            <switch></switch>
+            <view style="margin-right: 10px">只显示已参加</view>
+        </view>
+    </view>
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp">
+            <view class="box-note-body-comp" style="transition-delay:0ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-20}}px;width : {{divCompSize.width-20}}px; background-color:#EEE685">
+                <view class="note-title">上班</view>
+                <view class="note-block">
+                    <view class="note-block-item">
+                        <view>东岸篮球场</view>
+                        <view class="note-arrow"></view>
+                        <view>南软圆楼</view>
+                    </view>
+                    <view class="note-block-item" style="text-align: right">
+                        <view>
+                            <image src="/resources/icon-user.png" style="width: 30px;height: 30px"></image>
+                        </view>
+                        <view>30</view>
+                    </view>
+                </view>
+                <view class="note-block">
+                    <view class="note-block-item">
+                        22:30
+                    </view>
+                    <view class="note-block-item">
+                        <view class="join-btn">
+                            参加
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp">
+            <view class="box-note-body-comp" style="transition-delay:100ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-20}}px;width : {{divCompSize.width-20}}px;background-color:#EEE685"></view>
+        </view>
+    </view>
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp">
+            <view class="box-note-body-comp" style="transition-delay:200ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-20}}px;width : {{divCompSize.width-20}}px;background-color:#A4D3EE"></view>
+        </view>
+    </view>
+    <view class="box-body-comp" style="height : {{divCompSize.height}}px;width : {{divCompSize.width}}px">
+        <view class="box-note-comp">
+            <view class="box-note-body-comp" style="transition-delay:300ms;transform:rotateY({{page*360}}deg);height : {{divCompSize.height-20}}px;width : {{divCompSize.width-20}}px;background-color:#A4D3EE"></view>
+        </view>
+    </view>
+</view>

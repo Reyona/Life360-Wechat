@@ -1,0 +1,216 @@
+<!--<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="newTips-view">
+        <view class="selectType">
+            <view>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                        <view wx:if="{{array[index] == '上班'}}">
+                            <button style="width:150px;height:35px;padding-bottom:0px;font-size:15px;float:left;background-color: #50c5b7;">
+                                类型: 上班
+                            </button>
+                        </view>
+                        <view wx:elif="{{array[index] == '下班'}}">
+                            <button style="width:150px;height:35px;padding-bottom:0px;font-size:15px;float:left;background-color: #50c5b7;">
+                                类型: 下班
+                            </button>
+                        </view>
+                    </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+
+    <view class="newTips-view">
+        &lt;!&ndash;集合地点&ndash;&gt;
+        <view class="scroll-item">
+            <view class="flex-wrp">
+                <view class="title-left-panel">
+                    <image class="imageIcon" src="../index/image/landmark.png"/>
+                </view>
+                <view>
+                    <text style="float:left;">集合地点:</text>
+                    <input name="gatherLocation"/>
+                </view>
+            </view>
+            <view class="flex-wrp">
+                <view>
+                    <text style="float:left;">上/下班地点:</text>
+                    <input name="onOffDutyLocation"/>
+                </view>
+            </view>
+            <view class="flex-wrp">
+                <text style="float:left;">住址:</text>
+                <input name="homeLocation"/>
+            </view>
+        </view>
+    </view>
+
+    &lt;!&ndash;集合时间&ndash;&gt;
+    <view class="newTips-view">
+        <view class="scroll-item">
+            <view class="flex-wrp">
+                <view class="title-left-panel">
+                    <image class="imageIcon" src="../index/image/timer.png"/>
+                </view>
+                <view class="getherTime">
+                    <picker mode="time" value="{{getherTime}}" start="00:00" end="23:59"
+                            bindchange="bindGetherTimeChange">
+                        <view>
+
+                            &lt;!&ndash;<image src="../index/image/calender.png" class="imageIcon" />&ndash;&gt;
+
+                            &lt;!&ndash;<label style="float:left;" class="weui-input info-input">集合時間:{{getherTime}}</label>&ndash;&gt;
+
+                            &lt;!&ndash;<label class="date-chose-label">{{dateFrom}}</label>&ndash;&gt;
+
+                            &lt;!&ndash;<input name="dateFrom" value="{{dateFrom}}" />&ndash;&gt;
+                            <label style="float:left;">集合時間：</label>
+                            <input name="getherTime" value="{{getherTime}}"></input>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="flex-wrp">
+                <view class="getherTime">
+                    <picker mode="time" value="{{goTime}}" start="00:00" end="23:59" bindchange="bindGoTimeChange">
+                        <view>
+
+                            &lt;!&ndash;<image src="../index/image/calender.png" class="imageIcon" />
+
+                            &lt;!&ndash;<label class="date-chose-label">{{dateTo}}</label>&ndash;&gt;
+
+                            &lt;!&ndash;<input name="dateTo" value="{{dateTo}}" class="weui-input info-input" />&ndash;&gt;
+                            <label style="float:left;">出發時間：</label>
+                            <input name="goTime" value="{{goTime}}"></input>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    &lt;!&ndash;个人信息&ndash;&gt;
+    <view class="newTips-view">
+        <view class="scroll-item">
+            <view class="flex-wrp">
+                <view class="title-left-panel">
+                    <image class="imageIcon" src="../index/image/name.png"/>
+                </view>
+                <view class="adress">
+                    <label style="float:left;">中文姓名：</label>
+                    <input name="name"/>
+                </view>
+            </view>
+            <view class="flex-wrp">
+                <view class="adress">
+                    <label style="float:left;">联系电话：</label>
+                    <input name="phone" type="number" maxlength="12" placeholder="请输入手机号"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class=".publish-btn-section">
+        <button class=".publish-btn" formType="submit">添加</button>
+    </view>
+</form>-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="date-period date-period-wrapper">
+        <view class="from-date-label">
+            持续时间
+        </view>
+        <view class="from-date-picker date-picker-wrapper">
+            <picker class="date-picker" name="fromDate" mode="date"
+                    bindchange="fromDateChange" value="{{fromDate}}" start="{{defaultCurrentDate}}" end="{{afterSevenDate}}">
+                {{fromDate}}
+            </picker>
+            <view class="calender-icon">
+                <image style="height:1.5em;width:1.5em; opacity: 0.5;" src="../icon/calender.png"></image>
+            </view>
+        </view>
+        <view class="to-date-label">
+            到
+        </view>
+        <view class="to-date-picker date-picker-wrapper">
+            <picker class="date-picker" name="toDate" mode="date"
+                    bindchange="toDateChange" value="{{toDate}}" start="{{defaultCurrentDate}}" end="{{afterSevenDate}}">
+                {{toDate}}
+            </picker>
+            <view class="calender-icon">
+                <image style="height:1.5em;width:1.5em; opacity: 0.5;" src="../icon/calender.png"></image>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <view class="ticket">
+            <view>
+                <image class="thumbtack" src="../icon/thumbtack.png"></image>
+            </view>
+
+            <view class="type">
+                <picker style="flex:7;" name="type" bindchange="selectTypeChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                        {{array[index]}}
+                    </view>
+                </picker>
+                <view style="flex:3;">
+                    <image class="type-select-icon" src="../icon/select_white.png"></image>
+                </view>
+
+            </view>
+
+            <view style="display:flex;padding-top:.5em;">
+                <view class="from" style="display:flex;">
+                    <view style="flex:2">
+                        <image class="edit-icon" src="../icon/pen_white.png"></image>
+                    </view>
+                    <view style="flex:8">
+                        <input name="gatherLocation" class="msg-title" placeholder="集结地" maxlength="15" style="{{nullInput}}"/>
+                    </view>
+                </view>
+                <label class="arrow">
+                    <image class="arrow-icon" src="../icon/arrow.png"></image>
+                </label>
+                <view class="to" style="display:flex;">
+                    <view style="flex:2">
+                        <image class="edit-icon" src="../icon/pen_white.png"></image>
+                    </view>
+                    <view style="flex:8">
+                        <input name="targetLocation" class="msg-title" placeholder="目的地" maxlength="15" style="{{nullInput}}"/>
+                    </view>
+                </view>
+            </view>
+
+            <view class="time">
+                <view style="flex:2;">
+                    <image class="time-icon" src="../icon/time_white.png"></image>
+                </view>
+                <picker style="flex:8;" class="time-picker" mode="time" value="{{goTime}}" bindchange="bindGoTimeChange">
+                    <view>
+                        <input style="height:auto;" name="goTime" value="{{goTime}}"/>
+                    </view>
+                </picker>
+            </view>
+            <view class="remark">
+                <textarea name="remark" class="msg-content" placeholder="备注：请不要迟到哦！" type="text" maxlength="20"/>
+            </view>
+
+        </view>
+        <view class="captain">
+            <view class="join-action">
+                <image src="../icon/name.png" class="nameIcon"></image>
+                <input name="captain" type="text" class="weui-input info-input" placeholder="请输入姓名" style="{{nullInput}}"/>
+            </view>
+            <view class="join-action">
+                <image src="../icon/tel.png" class="nameIcon"></image>
+                <input name="phoneNum" type="number" maxlength="12" class="weui-input info-input" placeholder="请输入手机号" style="{{nullInput}}"/>
+            </view> 
+        </view>
+        <button class="publish-btn" formType="submit">发布</button>
+    </view>
+
+
+
+</form>
+
